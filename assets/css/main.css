@@ -48,6 +48,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
+    div, iframe {
+    margin: 0 auto;
+    display:block;
+}
+
 /* Box Model */
 
 	*, *:before, *:after {
