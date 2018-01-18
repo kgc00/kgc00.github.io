@@ -86,18 +86,34 @@
 									<h2>Function Force</h2>
 								</header>
 								<p>
-									Currently in production.  Part shoot 'em up, part educational.  Using phaser, tiled, and Graphicsgale.
+									Part shoot 'em up, part educational game.  Produced with Phaser, Tiled, and Graphicsgale.
                                     <br />                                    
-                                    Working as a systems designer, level designer, UI designer, and pixel artist -- 2017.
+                                    Worked as a systems designer, level designer, and pixel artist -- 2017. 
 								</p>
 								<section>
 									<div>
+										<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+											<style>
+												.mySlides {display:none}
+												.w3-left, .w3-right, .w3-badge {cursor:pointer}
+												.w3-badge {height:13px;width:13px;padding:0}
+											</style>
+
+
+											<div class="w3-content w3-display-container" style="max-width:640px">
+											  <img class="mySlides" src="images/gifs/FF/FF_LaserMechanic.gif" style="width:100%">
+											  <img class="mySlides" src="images/gifs/FF/FF_PuzzleThree.gif" style="width:100%">
+											  <img class="mySlides" src="images/gifs/FF/FF_Satellites.gif" style="width:100%">
+											  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+											    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 0)">&#10094;</div>
+											    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 0)">&#10095;</div>
+											    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+											    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+											    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+											  </div>
+											</div>
+											<br />
                                         <a>
-                                        <p style="text-align:center;"><img src="images/gifs/FF/FF_LaserMechanic.gif" alt=""></p>
-                                        <p style="text-align:center;"><img src="images/gifs/FF/FF_PuzzleThree.gif" alt=""></p>                                       
-                                        <p style="text-align:center;"><img src="images/gifs/FF/FF_Satellites.gif" alt=""></p>
-
-
 	                                        <a href="#work" class="jumplink pic">
 		                                        <span class="arrow icon fa-chevron-left" ><span>Return</span></span>
 		                                    </a>
@@ -121,19 +137,30 @@
                                     Worked as a 3D artist, web developer, and coder -- 2017.
 								</p>
 								<section>
-									<div>
-                                        <a class="image fit">
-                                        <img src="images/projects/HALEF1.png" alt="">
-                                        <p>
-	                                   	 <br />   
-										</p>
-                                        <img src="images/projects/HALEF2.png" alt="">
 
+								<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+											<style>
+												.mySlides {display:none}
+												.w3-left, .w3-right, .w3-badge {cursor:pointer}
+												.w3-badge {height:13px;width:13px;padding:0}
+											</style>
+
+									<div class="w3-content w3-display-container" style="max-width:640px">
+											  <img class="mySlides2" src="images/projects/HALEF1.png" style="width:100%">
+											  <img class="mySlides2" src="images/projects/HALEF2.png" style="width:100%">
+											  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%;bottom100px; ">
+											    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 1)">&#10094;</div>
+											    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 1)">&#10095;</div>
+											    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+											    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+											  </div>
+											  </div>
+											  <br />
 	                                        <a href="#work" class="jumplink pic">
 		                                        <span class="arrow icon fa-chevron-left" ><span>Return</span></span>
 		                                    </a>
 										</a>
-									</div> 
+									
 								</section>
 							</article>
 
@@ -174,15 +201,15 @@
 								</p>
 								<section>
 									<div>
-                                        <a>
-                                         <p style="text-align:center;"><img src="images/gifs/SMA/climb.gif" alt="">
-                                        <img src="images/gifs/SMA/standing.gif" alt=""></p>
-                                         <p style="text-align:center;"><img src="images/gifs/SMA/push.gif" alt=""></p>
-
+											  <p style="text-align:center"><img src="images/gifs/SMA/climb.gif" style="width:60%"></p>
+											  <br />
+											  <p style="text-align:center"><img src="images/gifs/SMA/standing.gif" style="width:60%"></p>
+											  <br />
+											  <p style="text-align:center"> <img src="images/gifs/SMA/push.gif" style="width:60%"></p>
+											  <br />                                    
 	                                        <a href="#work" class="jumplink pic">
 		                                        <span class="arrow icon fa-chevron-left" ><span>Return</span></span>
-		                                    </a>
-	                                    </a>										
+		                                    </a>									
 									</div> 
 								</section>
 							</article>
@@ -483,6 +510,38 @@
 					<script src="assets/js/util.js"></script>
 					<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 					<script src="assets/js/main.js"></script>
+
+					<!-- slideshow script-->
+					<script>
+						var slideIndex = [1,2];
+						var slideId = ["mySlides", "mySlides2", "mySlides3"]
+						showDivs(1, 0);
+						showDivs(1, 1);
+						showDivs(1, 2);
+
+						function plusDivs(n, no) {
+						  showDivs(slideIndex[no] += n, no);
+						}
+
+						function currentDiv(n) {
+						  showDivs(slideIndex[n] = n);
+						}
+
+						function showDivs(n, no) {
+						  var i;
+						  var x = document.getElementsByClassName(slideId[no]);
+						  if (n > x.length) {slideIndex[no] = 1}    
+						  if (n < 1) {slideIndex[no] = x.length}
+						  for (i = 0; i < x.length; i++) {
+						     x[i].style.display = "none";  
+						  }
+						  //for (i = 0; i < dots.length; i++) {
+						  //dots[i].className = dots[i].className.replace(" w3-white", "");
+						  //}
+						  x[slideIndex[no]-1].style.display = "block"; 
+						  //dots[slideIndex[no]-1].className += " w3-white";
+						}
+					</script>
 
 				<script>
 
