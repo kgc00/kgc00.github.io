@@ -26,6 +26,15 @@
 		line-height: 1;
 	}
 
+    i {
+        font-size: 13pt;
+        line-height: 0px;
+    }
+
+    smallP {
+        font-size: 14pt;
+    }
+
 	ol, ul {
 		list-style: none;
 	}
@@ -63,12 +72,12 @@
 
 /* Grid */
 
-	.row {
-		border-bottom: solid 1px transparent;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
+    .row {
+        border-bottom: solid 1px transparent;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
 	.row > * {
 		float: left;
@@ -901,16 +910,16 @@
 
 /* Section/Article */
 
-	section, article {
-		margin-bottom: 3em;
-	}
+        section, article {
+            margin-bottom: 3em;
+        }
 
 		section > :last-child, section:last-child, article > :last-child, article:last-child {
 			margin-bottom: 0;
 		}
 
 	header > p {
-		color: #aaa;
+		color: #aaa;        
 	}
 
 /* Image */
@@ -1165,19 +1174,37 @@
 			}
 
 			h1 {
-				font-size: 2.4em;
+				font-size: 2.6em;
 				letter-spacing: -0.015em;
 			}
 
 			h2 {
-				font-size: 1.8em;
+				font-size: 2.1em;
 				letter-spacing: -0.015em;
 			}
 
-			h3, h4, h5, h6 {
-				font-size: 1.25em;
+			h3, h6 {
+				font-size: 1.5em;
 				letter-spacing: -0.015em;
 			}
+
+            h4 {
+                font-size: 1.2em;
+                letter-spacing: -0.015em;
+                color: #777777;
+            }
+
+            h5 {
+                font-size: .2em;
+                letter-spacing: -0.015em;
+                color: #777777;
+            }
+
+        /* Paragraph */
+            p {
+                font-size: 1.2em;
+            }
+        
 
 		/* Section/Article */
 
@@ -1187,7 +1214,7 @@
 
 				header > p {
 					margin: 0.5em 0 0 0;
-				}
+				}    
 
 		/* Button */
 
