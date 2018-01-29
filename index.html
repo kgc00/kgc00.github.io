@@ -89,9 +89,9 @@
                 <p>
                     Function Force was originally conceived during a game jam at the White House by my professors at American University.
                     <br /><br />
-                    Our task (myself and two other students) was to redesign the core concept and make it our own, over the course of a semester, for ETS to use as 
-                    part of an initiative of game based tests (developed in early 2017).  I did all the level and puzzle design, as well as some of the art.  
-                    I was also key in the systems design, however it was a very collaborative process where we all built off of each other’s ideas, therefore I can’t claim all the credit.
+                    Our task (myself and two other students) was to redesign the core concept and make it our own, over the course of a semester, for ETS to use as
+                    part of an initiative of game-based tests (developed in early 2017).  I did all the level and puzzle design, as well as some of the art.
+                    I was also key in the systems design, however, it was a very collaborative process where we all built off of each other’s ideas, therefore I can’t claim all the credit.
                 </p>
                 <h3> Concept</h3>
                 <p>
@@ -107,7 +107,7 @@
                 </p>
                 <h3>Dilemma</h3>
                 <p>
-                    Function Force was sponsored primarily as a game-based testing application, which is at odds to the dextrous nature of a shoot ‘em up game.  Ideally, test administrators would be able to measure mastery over mathematical concepts distinctly from the skill involved in playing a game.  How can we, as the designers, deliver a sterile testing environment while also making a fun shoot ‘em up?
+                    Function Force was sponsored primarily as a game-based testing application, which is at odds with the dextrous nature of a shoot ‘em up game.  Ideally, test administrators would be able to measure mastery over mathematical concepts distinctly from the skill involved in playing a game.  How can we, as the designers, deliver a sterile testing environment while also making a fun shoot ‘em up?
                 </p>
                 <h3>Solution</h3>
                 <p>
@@ -117,13 +117,13 @@
                     <img class="image" src="images/gifs/FF/FF_LaserMechanic.gif" style="max-width:480px">
                     <br />
                     <i>
-                        Although players could avoid enemies, levels and content were designed to foster use of a laser which follows the y=mx+b formula.
+                        Although players could avoid enemies, levels and content were designed to foster the use of a laser which follows the y=mx+b formula.
                         Scoring helps to record whether the player was able to destroy enemies or only avoid them
                     </i>
                 </p>
                 <p>
                     ETS let us know that they wanted more testable moments, moments where they could tell whether or not the student had mastered the concept.
-                    This translated for me to designing content which was impassible without the correct formula plugged into your laser.
+                    This translated for me to designing content which was impossible without the correct formula plugged into your laser.
                     With that in mind I came up with and designed the tunnel sub-sections found in some portions of the shooting sections.
                 </p>
                 <br />
@@ -140,7 +140,7 @@
                 </p>
                 <h3>Solution</h3>
                 <p>
-                    Our solution was to introduce powerups (called satellites) which act as extra guns that fly next to your original ship, similar to upgrading your laser in other shoot ‘em ups.  Originally we were thinking of sine wave lasers, reflective surfaces, and other ways to implement satellites (such as dropping them at locations as consumable), but decided on this implementation due to it’s synergy with shoot ‘em up mechanics and its usefulness and simplicity in both puzzle and shooting sections.
+                    Our solution was to introduce powerups (called satellites) which act as extra guns that fly next to your original ship, similar to upgrading your laser in other shoot ‘em ups.  Originally we were thinking of sine wave lasers, reflective surfaces, and other ways to implement satellites (such as dropping them at locations as consumable), but decided on this implementation due to its synergy with shoot ‘em up mechanics and its usefulness and simplicity in both puzzle and shooting sections.
                 </p>
                 <p align="center">
                     <img class="image" src="images/gifs/FF/FF_Satellites.gif" style="max-width:480px"> <br />
@@ -172,8 +172,8 @@
                 </p>
                 <h3>Conclusion</h3>
                 <p>
-                    By splitting up the game into shooting and puzzle sections, we were able to pace the experience such that it is constantly engaging.  
-                    This also allowed for a variety of testable/teachable moments through level and enemy design.
+                    By splitting up the game into shooting and puzzle sections, we were able to pace the experience such that it is constantly engaging.
+                    This also allowed for a variety of testable/teachable moments through the level and enemy design.
                     <br />
                     Additionally, adding satellites introduced the ability to have more complex puzzles and difficult enemies, both of which increase player enjoyment.
                     <br />
@@ -198,7 +198,7 @@
                 <h3>Introduction</h3>
                 <p>
                     During the summer of 2017, I worked on an iteration of the HALEF system for ETS, as part of a full-time internship in San Francisco, California.
-                    I worked primarily alone, but was supported during some parts of the learning process by other team members. <br />
+                    I worked primarily alone but was supported during some parts of the learning process by other team members. <br />
                     <i>
                         You can read more about the process in this research paper we published
                         <a href="https://dl.acm.org/citation.cfm?doid=3136755.3143034" target="_blank">here</a>.
@@ -238,7 +238,7 @@
                 <p>
                     I used Blender, an open source 3D modeling program, as well as open source libraries such as Socket.IO to keep the project 100% open source.
                     <br /><br />
-                    Additionally, I researched ways to reduce Unity WebGL file size, and possible alternative solutions to using Unity.
+                    Additionally, I researched ways to reduce Unity WebGL file size and possible alternative solutions to using Unity.
                     Luckily, I found that there was an upgrade to Unity’s WebGL functionality (the introduction of engine code stripping)
                     that helped immensely to reduce file size/load time.  With the addition of a low-poly workplace and avatar, which I built from scratch,
                     we were good to go.  I used Blender to model, texture, rig, and animate the avatar.
@@ -261,14 +261,14 @@
                     <br /><br />
                     Rather than embedding the audio in the webpage and calling
                     for it using javascript, as the previous iteration had, I included the audio inside the Unity web blob.
-                    Rather than animating the avatar on the update loop (via blendshape normalized values called by code), as the previous iteration had, I controlled
+                    Rather than animating the avatar on the update loop (via blendshape normalized values called by code), as the previous iteration had I controlled
                     animations by creating them in Blender and exporting them into Unity.  This allowed me to play an entire animation with a single message,
                     which was useful for keeping audio and video in sync.
                     <br /><br />
                     Mouths were animated using the Papagayo + JLipSync plugin
                     pipeline in Blender, which was a perfect solution for our needs.  It offered a robust way to account for new dialogue,
                     while also becoming more efficient the longer we used the same models.  This is because it works by setting up phoneme shapes,
-                    such as 'o', or 'L', and interpolating values between those mouthshapes (rather than hand animating every mouth movement).
+                    such as 'o', or 'L', and interpolating values between those mouth shapes (rather than hand animating every mouth movement).
                 </p>
                 <p align="center">
                     <img class="image" src="images/projects/Papagayo_screen.png" style="max-width:480px"> <br />
@@ -277,8 +277,8 @@
                     </i>
                 </p>
                 <p>
-                    Because I fundamentally changed the way in which the HALEF system interacts with the Unity web blob (due to my flow rearchitecture
-                    and the a Unity issued updated WebGL format)
+                    Because I fundamentally changed the way in which the HALEF system interacts with the Unity web blob (due to my flow re-architecture
+                    and the Unity issued updated WebGL format)
                     I had to change how messages were passed to the different parts of the system.
                 </p>
                 <p align="center">
@@ -290,7 +290,7 @@
                 </p>
                 <p>
                     I first added hooks in the Unity web blob which could be accessed via javascript
-                    run on the html page, then I had the system pass a message to Unity depending on it's status through the javascript running on the html page.
+                    run on the HTML page, then I had the system pass a message to Unity depending on its status through the javascript running on the HTML page.
                 </p>
 
                 <p align="center">
@@ -314,19 +314,19 @@
                 </p>
                 <h3>Result</h3>
                 <p>
-                    Doing the above, I developed a working, low load-time application, complete with a decent looking 3D model.  It was an incredible 
-                    experience to be able to immerse myself in that pipeline, which was almost entirely new to me, while thinking critically about how 
-                    each part affected the final product, and what I could do to eliminate the bugs in the previous iteration.  There was a lot of learning 
+                    Doing the above, I developed a working, low load-time application, complete with a decent looking 3D model.  It was an incredible
+                    experience to be able to immerse myself in that pipeline, which was almost entirely new to me, while thinking critically about how
+                    each part affected the final product, and what I could do to eliminate the bugs in the previous iteration.  There was a lot of learning
                     on the job, but even so, I am proud that I was still able to deliver a product that both ETS and I approved.
                     <br /><br />
-                    Because of my contributions, I was offered a contract position to work part-time with ETS while I finished my master’s degree in Game Design at American University.  
+                    Because of my contributions, I was offered a contract position to work part-time with ETS while I finished my master’s degree in Game Design at American University.
                     I am currently working on the next iteration of HALEF as I pursue my degree (shown here):
                 </p>
 
                 <p align="center">
                     <img class="image" src="images/projects/HALEF2.png" style="max-width:480px"> <br />
                     <i>
-                        Current iteration of HALEF depicted, I am still continuing work on improving the system and the pipeline.  We
+                        The current iteration of HALEF depicted, I am still continuing work on improving the system and the pipeline.  We
                         are currently researching Mo-Cap inclusion for wider usability and adoption of the system
                     </i>
                 </p>
@@ -356,11 +356,11 @@
                 <h3>Execution</h3>
                 <p>
                     Because I was designing for tabletop simplicity was a core guiding principle- the game has to be usable and the mechanics learnable.
-                    Analogue games tend to be more successful with simpler and less rules (computers aren’t there to walk players through the game and
+                    Analogue games tend to be more successful with simpler and fewer rules (computers aren’t there to walk players through the game and
                     calculate all the different equations for them).  Additionally, this game was meant to be accessible to newer players or players who weren’t too
                     interested in heavy calculations and obscure rules.
                     <br /><br />
-                    In light of this I had only a few rules- players started the game on the left side of the board and if they made it to the right side then they won, simple right?
+                    In light of this, I had only a few rules- players started the game on the left side of the board and if they made it to the right side then they won, simple right?
                 </p>
                 <p align="center">
                     <img class="image" src="images/projects/Iteration1.jpeg" style="max-width:480px"> <br />
@@ -384,9 +384,9 @@
                 <h3>Dilemma</h3>
                 <p>
                     Feedback indicated that our system for randomly generating columns (through dice rolls) was imbalanced, leading to unnecessarily difficult situations.
-                    For example a column of 5 units in front of a column of 5 ranged units was very difficult to deal with.
+                    For example, a column of 5 units in front of a column of 5 ranged units was very difficult to deal with.
                     <br /><br />
-                    Another core piece of feedback was that there was not much variation to combat.  There were 2, perhaps 3 types of enemies which acted similarly.
+                    Another core piece of feedback was that there was not much variation in combat.  There were 2, perhaps 3 types of enemies which acted similarly.
                     People were interested in an expanded bestiary.
                 </p>
                 <h3>Solution</h3>
@@ -394,7 +394,7 @@
                 <p>
                     To deal with these issues, I decided to expand upon the narrative of the game and introduce new enemies.  I had been inspired by ‘A Pattern Language’
                     by Christopher Alexander, a book about how architecture and intentional design can affect our everyday lives for the better, which got me thinking about
-                    how spaces in games can affect gameplay.  In this case it lead me to introducing a room based combat system.
+                    how spaces in games can affect gameplay.  In this case, it led me to introduce a room based combat system.
                 </p>
                 <p align="center">
                     <img class="image" src="images/projects/RoomExamples.jpg" style="max-width:480px"> <br />
@@ -405,7 +405,7 @@
                 </p>
 
                 <p>
-                    Room based exploration was important in a few ways, the first being that a room’s size will limit the number of creatures contained within it.  Instead of
+                    Room-based exploration was important in a few ways, the first being that a room’s size will limit the number of creatures contained within it.  Instead of
                     every encounter having the possibility of a brutal number of enemies, staging these encounters inside a limited space allowed me to dictate what range of
                     enemies players would face at a time.  This was important for normalizing difficulty across all encounters.  Finally, this change also was helpful
                     for learnability and usability of the system-- players could see only what they could interact with right now.
@@ -430,7 +430,7 @@
                 <p>
                     New types of enemies were introduced which required different methods to overcome.  This was tied into difficulty and progression through use of a 'floor' system.
                     Players would clear a certain number of rooms per floor, fight a boss, then advance to the next floor.  Later floors were more difficult and rewarding, allowing for
-                    me to design obstacles for different stages of character progression.  For simplicity I designed all special monster abilities to activate on rolls of 5 or 6.
+                    me to design obstacles for different stages of character progression.  For simplicity, I designed all special monster abilities to activate on rolls of 5 or 6.
                     Sharing this across all enemy types help learnability and ease of use.
                 </p>
                 <h4>Player Progression</h4>
@@ -446,7 +446,7 @@
                     </i>
                 </p>
                 <p>
-                    In addition to this I included items which helped to customize characters and shore up weaknesses or emphasize strengths differently in each playthrough.
+                    In addition to this, I included items which helped to customize characters and shore up weaknesses or emphasize strengths differently in each playthrough.
                     Players would draw a random item from the item deck if certain conditions were met, such as defeating a boss.  Players could trade items
                     to support cooperative play.
                 </p>
@@ -460,8 +460,8 @@
                 <p>
                     By adding more content and refining existing mechanics I shaped player options and increased both the depth and amount of options available to players.
                     <br /><br />
-                    Personally, I feel the game successfully conveyed an interesting take on a cooperative side-scroller experience while also containing dungeon crawling 
-                    and RPG elements.  I would love to re-visit the horizontal nature of initial iteration at some point, however I feel that there were many problems, such as 
+                    Personally, I feel the game successfully conveyed an interesting take on a cooperative side-scroller experience while also containing dungeon crawling
+                    and RPG elements.  I would love to re-visit the horizontal nature of initial iteration at some point, however, I feel that there were many problems, such as
                     learnability and clarity that were improved with the move towards a room based system.  It was very fun to design a dungeon crawling tabletop RPG.
                 </p>
 
