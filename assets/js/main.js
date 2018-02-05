@@ -51,7 +51,8 @@
 					$footer = $('#footer'),
 					$wrapper = $('#wrapper'),
 					$nav = $('#nav'), $nav_links = $nav.find('a'),
-					$jumplinks = $('.jumplink'),
+                    $hovers = $('.hover'),
+                    $jumplinks = $('.jumplink'),
 					$form = $('form'),
 					panels = [],
 					activePanelId = null,
@@ -180,7 +181,25 @@
 
 						}
 
-					});
+                    });
+
+                    // Nav + Jumplinks.
+                    $nav_links.add($hovers).click(function (e) {
+                        var t = $(this), href = t.attr('href'), id;
+
+                        if (href.substring(0, 1) == '#') {
+
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            id = href.substring(1);
+
+                            if (id in panels)
+                                panels[id]._activate();
+
+                        }
+
+                    });
 
 				// Window.
 					$window
