@@ -53,9 +53,7 @@
                     <h2>Selected Works</h2>
                 </header>
                 <p>
-                    <font size="4">
                         My specialities are systems and game design.  I work mainly with Unreal Engine and Unity3D.
-                    </font>
                 </p>
                 <br />
                 <section>
@@ -64,6 +62,7 @@
                             <div class="3u 12u$(mobile)"><a href="fforce.html" class="hover" /><img src="images/work/work12.png" alt="" title="Function Force" /></a></div>
                             <div class="3u 12u(mobile)"><a href="#halef" class="hover"><img src="images/work/work11.png" alt="" title="HALEF" /></a></div>
                             <div class="3u 12u$(mobile)"><a href="#4Floors" class="hover"><img src="images/work/work04.png" alt="" title="4 Floors" /></a></div>
+                            <div class="3u 12u$(mobile)"><a href="#strife" class="hover"><img src="images/work/work13.png" alt="" title="Strife!" /></a></div>
                         </div>
                     </div>
                 </section>
@@ -77,7 +76,7 @@
 
                 <h3>Introduction</h3>
                 <p>
-                    During the summer of 2017, I worked on an iteration of the HALEF system for ETS, as part of a full-time internship in San Francisco, California. 
+                    During the summer of 2017, I worked on an iteration of the HALEF system for ETS, as part of a full-time internship in San Francisco, California.
                     I worked primarily alone but was supported during some parts of the learning process by other team members. <br />
                     <i>
                         You can read more about the process in this research paper we published
@@ -204,7 +203,7 @@
                     on the job, but even so, I am proud that I was still able to deliver a product that both ETS and I approved.
                     <br /><br />
                     Because of my contributions, I was offered a contract position to work part-time with ETS while I finished my master’s degree in Game Design at American University.  The
-                    contract was twice extended, and eventually turned into a full-time position during the summer of 2018.  I am currently working in ETS's San Francisco office.                    
+                    contract was twice extended, and eventually turned into a full-time position during the summer of 2018.  I am currently working in ETS's San Francisco office.
                     I am currently working on the next iteration of HALEF as I pursue my degree (shown here):
                 </p>
 
@@ -359,163 +358,327 @@
                 </section>
             </article>
 
-            <!-- Art -->
-            <article id="art" class="panel">
+            <!-- Strife! -->
+            <article id="strife" class="panel">
                 <header>
-                    <h2>Art</h2>
+                    <h2>Strife!</h2>
                 </header>
+
+                <h3>Introduction</h3>
                 <p>
+                    Strife! Was my capstone project for my MA in Game Design at American University.
+                    We had 3 and a half months to create a project from scratch, team size was a single person.
+                    <br />
+                </p>
+                <h3>Background</h3>
+                <p>
+                    I’d been playing a lot of card games like Hearthstone and The Elder Scrolls: Legends at that point in my life, so I decided to create a CCG-like game, however,
+                    I didn’t think the world needed another Magic clone(!), so I purposefully made it mechanically distinct.
+                    Strife! is at heart an experimental mix of a board game and a CCG.  I combined the Strategy game and Card Game genres to create something new and exciting.
+                    <br />
+                </p>
+                <h3>Process</h3>
+                <p>
+                    The main inspiration for Strife! came from the RTS and CCG genres.  To start, I decided to map out a list of elements in both of these genres,
+                    then try to find commonalities.  From there I chose which of those elements were most important, and which were less so.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/proto.png" style="max-width:480px"> <br />
+                    <i>
+                        One early document, among many, to refine the design.
+                    </i>
+                </p>
+                <p>
+                    With a core direction defined, I could start brainstorming ways to mechanically represent them.  I ended up focusing on a spatial element of multiple ‘zones’.
+                    Additionally, I decided to reduce uncertainty by giving players the ability to always have access to any units they’ve unlocked, throughout the game.
+                    This was meant to also act as an homage to the tech trees in strategy games.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/proto1.jpeg" style="max-width:480px"> <br />
+                    <i>
+                        A playtest for an early version of Strife!.
+                    </i>
+                </p>
+                <p>
+                    Finally, I created some units and abilities to populate the game and playtested.
+                    After each playtest I would use notes to refine and adjust the balance of the game until it felt like a stable, dynamic, and exciting experience.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/proto3.jpeg" style="max-width:480px"> <br />
+                    <i>
+                        Getting to play with cards which had the stats and abilities printed on them was a milestone for me, and fantastic for people trying to pick up the game.
+                    </i>
+                </p>
+
+                <h3>Rules</h3>
+                <p>
+                    To get a feel for the game, I’ll give an overview of the rules.  Each player can construct buildings, these buildings can spawn units.
+                    Buildings and units need one turn to get ready before they can be used.  Units can use abilities, attack, and move.
+                    Possible targets for offensive actions are other player’s buildings, units, and the other player themselves.
+                    Destroying buildings is a way to damage your opponents economy.  There’s also a deck of powerful abilities which are obtained by producing structures.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/unionbuilding.PNG" style="max-width:480px"> <br />
+                    <i>
+                        A sample building.  Front side is on the left, the back side is on the right.
+                    </i>
+                </p>
+
+                <h3>Dilemmas</h3>
+                <p>
+                    Throughout all phases of development, Strife! suffered from pacing issues.  Many of the earlier iterations’ games would last multiple hours with lulls
+                    where players wouldn’t meaningfully interact with each other.  Finally, there were huge issues with the amount of complexity present in both the rules
+                    of the game and the unit abilities.
+                </p>
+
+                <h3>Solutions for Pacing</h3>
+                <p>
+                    The mechanics of the game caused the slow pace of the game.  Although I did like the core ideas of representing space via multiple zones,
+                    as well as a tech tree players could progress on, their implementation left the game feeling stale and unengaging.  There were a large number
+                    of zones players had to progress through before they could either damage a player’s health or economy, additionally, because moving used up that
+                    unit’s actions for the turn, the defending player would always have the choice of what to trade for what.  This made defensive play incredibly strong.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/proto2.jpeg" style="max-width:480px"> <br />
+                    <i>
+                        An early playtest.  Playing with index cards and spreadsheets did not help games to move quickly.  Many times players would spend minutes consulting the
+                        spreadsheet before taking their move.
+                    </i>
+                </p>
+                <p>
+                    Through playtesting, I settled upon using three zones, rather than 4, 6, or 8.  Additionally, I allowed units to both use an ability and move to a different
+                    zone each turn to allow for the aggressive player to choose what trades they’d like to take.  I also specified a cap of 6 units per zone, to stop players from
+                    stockpiling units, creating an impenetrable wall of bodies.  Finally, I linked board options to economic strength by way of giving players a strong, randomized
+                    ability with every building constructed.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/SA.PNG" style="max-width:480px"> <br />
+                    <i>
+                        A sample ability card which can be drawn from the Ansari deck.  Spiritual Assault allows players to target high value, difficult to engage targets and
+                        take them out of the game.
+                    </i>
+                </p>
+                <p>
+                    In terms of economics, originally the game had ways to invest into economy, by building structures which boost gold gain per turn.  I wanted to allow players
+                    to play greedy and take risks for a greater payout later.  However, due to the defensive nature of the game, building these structures was always the correct move.
+                    I eventually settled upon taking them out of the game, giving players a free structure each turn, and the ability to build a second one for gold.
+                    This allowed players to invest in an immediate advantage, in the form of units on the board, or an economic advantage, in the form of buildings.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/dm.PNG" style="max-width:480px"> <br />
+                    <i>
+                        A sample ability card which can be drawn from the Union deck.  Detonate Mine allows players to defend against aggressive plays.
+                        This is especially key for the Union, who are generally weaker in the early game.
+                    </i>
+                </p>
+
+                <h3>Solutions for Complexity</h3>
+                <p>
+                    For most of playtesting, users playtested with torn up index cards and spreadsheets off to the side.  Many complained that it was hard to understand which units
+                    could do what, and with tech trees being in the game, many didn’t know what units they were progressing towards.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/tech tree.PNG" style="max-width:480px"> <br />
+                    <i>
+                        This is part of a larger tech tree sheet for the Union faction.  By presenting this information in an easy to parse way, I helped keep players engaged and
+                        increased the pace of the game for newer players.
+                    </i>
+                </p>
+                <p>
+                    During the last two weeks of development, I spent my time looking at the pieces from a UX perspective.  I did interviews to figure out what kinds of things
+                    people wanted on cards, problems they faced, what they liked about the game, etc.  Using this information I created multiple mock-ups, focusing on both which information
+                    should be included on the pieces, as well as how it’s included.  I tested different icons, text, and shared terminology to help users onboard quickly.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/closeup.jpeg" style="max-width:480px"> <br />
+                    <i>
+                        An example of how the board looks with custom art and directions printed on the cards themselves.
+                    </i>
+                </p>
+
+                <h3>Conclusion</h3>
+                <p>
+                    I learned a great deal by developing Strife!.  First off, one of the ideas I wanted to play around with was to do what I could to remove randomness from the game.
+                    Doing so, in the way that I did, actually made the game static and unengaging.  By allowing for players to always be able to do any action, it takes away the developer’s
+                    ability to make the actions exciting and powerful.  The more situational and undependable a play is, the more liberty we have, as designers, to make it strong and exciting.
+                </p>
+                <p>
+                    There were many other lessons, but ultimately, this was the most important to me.  I feel like Strife! failed in many ways: I had to reintroduce chance, games take
+                    too long, and it still feels similar to Magic, however, I also succeeded in making a unique, deep, and fun game.  Because of this, and what I’ve learned from the project,
+                    I consider the game a success.
+                </p>
+                <p align="center">
+                    <img class="image" src="images/strife/proto4.jpeg" style="max-width:480px"> <br />
+                    <i>
+                        The current iteration of Strife!  Players are enjoying a round of speed Strife!, which pleases me greatly!
+                    </i>
+                </p>
+                <section>
+                    <div>
+                        <a href="#work" class="jumplink pic">
+                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                        </a>
+                    </div>
+                </section>
+            </article>
+
+                <!-- Art -->
+                <article id="art" class="panel">
+                    <header>
+                        <h2>Art</h2>
+                    </header>
+                    <p>
                         Although my focus is design, I am proficient in 3D art.  I am familiar with other kinds of art as well (2D, Pixel, etc).
-                </p>
-                <br />
-
-                <section>
-                    <div class="inner gallery">
-                        <div class="row">
-                            <!--<div class="3u 12u$(mobile)"><a href="#halef-art" class="jumplink pic"><img src="images/work/work11.jpg" alt="" title="HALEF" /></a></div>-->
-                            <div class="3u 12u$(mobile)"><a href="#bike" class="hover"><img src="images/thumbs/p1.png" alt="" title="Bike" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="today.html" class="hover"><img src="images/work/work10.png" alt="" title="Today" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="#highway" class="hover"><img src="images/thumbs/p3.png" alt="" title="Gas Station" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="#garden" class="hover"><img src="images/thumbs/p2.png" alt="" title="Japanese Garden" /></a></div>
-                        </div>
-                    </div>
-                </section>
-            </article>
-
-
-            <!-- HALEF -->
-            <article id="halef-art" class="panel">
-                <header>
-                    <h2>HALEF</h2>
-                </header>
-                <p>
-                    Some work done for ETS to model, texture, rig, and animate 3D models.
-                </p>
-                <section>
-                    <div class="inner gallery">
-                        <div class="row">
-                            <p> placeholder </p>
-                        </div>
-                        <a href="#art" class="jumplink pic">
-                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
-                        </a>
-                    </div>
-                </section>
-            </article>
-
-            <!-- Bike -->
-            <article id="bike" class="panel">
-                <header>
-                    <h2>Bike</h2>
-                </header>
-                <p>
-                    A bike from a post-apocalyptic future.  Made with Blender and Quixel, imported into Unity3D -- 2016.
-                </p>
-                <section>
-                    <div class="inner gallery">
-                        <div class="row">
-                            <div class="3u 12u$(mobile)"><a href="images/art/bikecap2.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb1.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/bikecap3.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb2.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/bikecap4.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb3.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/bikecap5.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb4.png" alt="" /></a></div>
-                        </div>
-                        <a href="#art" class="jumplink pic">
-                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
-                        </a>
-                    </div>
-                </section>
-            </article>
-
-            <!-- Garden -->
-            <article id="garden" class="panel">
-                <header>
-                    <h2>Japanese Garden</h2>
-                </header>
-                <p>
-                    Made using Blender, Photoshop, and Unity3D -- 2016.
-                </p>
-                <section>
-                    <div class="inner gallery">
-                        <div class="row">
-                            <div class="3u 12u$(mobile)"><a href="images/art/bridgescreencap.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb1.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/gardenscreencap1.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb2.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/gardenscreencap2.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb3.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/toriiscreencap.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb4.png" alt="" /></a></div>
-                        </div>
-                        <a href="#art" class="jumplink pic">
-                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
-                        </a>
-                    </div>
-                </section>
-            </article>
-
-            <!-- Highway -->
-            <article id="highway" class="panel">
-                <header>
-                    <h2>Abandoned Highway</h2>
-                </header>
-                <p>
-                    Made in collaboration with a classmate.  I was responsible for the scene composition, terrain, gas station, and highway.
-
-                    Made using Blender, Photoshop, Quixel, and Unity3D -- 3 weeks, 2016.
-                </p>
-                <section>
-                    <div class="inner gallery">
-                        <div class="row">
-                            <div class="3u 12u$(mobile)"><a href="images/art/highwaycap.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb1.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/highwaycap2.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb2.png" alt="" /></a></div>
-                            <div class="3u 12u$(mobile)"><a href="images/art/highwaycap3.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb3.png" alt="" /></a></div>
-                        </div>
-                        <a href="#art" class="jumplink pic">
-                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
-                        </a>
-                    </div>
-                </section>
-            </article>
-
-            <!-- Contact -->
-            <article id="contact" class="panel">
-                <header>
-                    <h2>About</h2>
-                </header>
-
-                <p>
-                    I'm a musician, artist, designer, and avid gamer.  I love creating new things and digging into juicy mechanics.
-                    I’ve been playing games my whole life, and although designing is my forte, coding has come naturally to me.
-                    I specialize in C#, but I have experience with C++ and Javascript as well.
-                    <br /> <br />
-                    I've been involved with esports since 2006, and I feel that this experience has helped to shape my view of game design.
-                    As a competitive player in titles like Street Fighter, Dota, and Counter-Strike, I can understand how, through my familiarity with their systems,
-                    mechanics affect the balance of a game on a deep level.  I feel that my familiarity with the competitive scene across many different
-                    titles has helped me to become a better designer.
-                    <br /><br />
-                    I was the deputy chair of the local IGDA chapter (DC) until I moved in the spring of 2018.  During my time in DC, I helped to run
-                    local game events (SAAM Arcade, GGJ, P3M5 @ the Goethe Institute).
-                    I'm currently working for Educational Testing Services in San Francisco. I recently graduated from American University with an MA in Game Design (2018).  
-                    My BA was obtained in Philosophy from SUNY Purchase in 2013.
-                    <br /> <br />Cheers!
-                </p>
-                <div class="row">
-                    <h4 align="center">Contact Me</h4>
-                    <p align="center">
-                        <a href="https://www.linkedin.com/in/kirby-cofino-7324a9135/" target="_blank" class="jumplink pic">
-                            <img src="images/liLogo.png" />
-                        </a>
-                        <a href="https://twitter.com/Kirby_Cofino" target="_blank" class="jumplink pic">
-                            <img src="images/twitterLogo.png" style="max-width: 60px" />
-                        </a>
                     </p>
-                    <h4 align="center">Resume</h4>
-                    <p align="center">
-                        <a href="images/Kirby Cofino Resume.pdf" target="_blank" class="jumplink pic">
-                            <img src="images/ResumeCropped.png" style="max-width: 60px" />
-                        </a>
+                    <br />
+
+                    <section>
+                        <div class="inner gallery">
+                            <div class="row">
+                                <!--<div class="3u 12u$(mobile)"><a href="#halef-art" class="jumplink pic"><img src="images/work/work11.jpg" alt="" title="HALEF" /></a></div>-->
+                                <div class="3u 12u$(mobile)"><a href="#bike" class="hover"><img src="images/thumbs/p1.png" alt="" title="Bike" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="today.html" class="hover"><img src="images/work/work10.png" alt="" title="Today" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="#highway" class="hover"><img src="images/thumbs/p3.png" alt="" title="Gas Station" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="#garden" class="hover"><img src="images/thumbs/p2.png" alt="" title="Japanese Garden" /></a></div>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+
+
+                <!-- HALEF -->
+                <article id="halef-art" class="panel">
+                    <header>
+                        <h2>HALEF</h2>
+                    </header>
+                    <p>
+                        Some work done for ETS to model, texture, rig, and animate 3D models.
                     </p>
-                    <p align="right">
-                        <img src="images/email.PNG" style="max-width: 240px" />
+                    <section>
+                        <div class="inner gallery">
+                            <div class="row">
+                                <p> placeholder </p>
+                            </div>
+                            <a href="#art" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                            </a>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Bike -->
+                <article id="bike" class="panel">
+                    <header>
+                        <h2>Bike</h2>
+                    </header>
+                    <p>
+                        A bike from a post-apocalyptic future.  Made with Blender and Quixel, imported into Unity3D -- 2016.
+                    </p>
+                    <section>
+                        <div class="inner gallery">
+                            <div class="row">
+                                <div class="3u 12u$(mobile)"><a href="images/art/bikecap2.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb1.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/bikecap3.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb2.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/bikecap4.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb3.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/bikecap5.png" target="_blank" class="hover"><img src="images/art/thumbs/bike/bikethumb4.png" alt="" /></a></div>
+                            </div>
+                            <a href="#art" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                            </a>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Garden -->
+                <article id="garden" class="panel">
+                    <header>
+                        <h2>Japanese Garden</h2>
+                    </header>
+                    <p>
+                        Made using Blender, Photoshop, and Unity3D -- 2016.
+                    </p>
+                    <section>
+                        <div class="inner gallery">
+                            <div class="row">
+                                <div class="3u 12u$(mobile)"><a href="images/art/bridgescreencap.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb1.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/gardenscreencap1.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb2.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/gardenscreencap2.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb3.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/toriiscreencap.png" target="_blank" class="hover"><img src="images/art/thumbs/garden/gardenthumb4.png" alt="" /></a></div>
+                            </div>
+                            <a href="#art" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                            </a>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Highway -->
+                <article id="highway" class="panel">
+                    <header>
+                        <h2>Abandoned Highway</h2>
+                    </header>
+                    <p>
+                        Made in collaboration with a classmate.  I was responsible for the scene composition, terrain, gas station, and highway.
+
+                        Made using Blender, Photoshop, Quixel, and Unity3D -- 3 weeks, 2016.
+                    </p>
+                    <section>
+                        <div class="inner gallery">
+                            <div class="row">
+                                <div class="3u 12u$(mobile)"><a href="images/art/highwaycap.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb1.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/highwaycap2.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb2.png" alt="" /></a></div>
+                                <div class="3u 12u$(mobile)"><a href="images/art/highwaycap3.png" target="_blank" class="hover"><img src="images/art/thumbs/highway/highwaythumb3.png" alt="" /></a></div>
+                            </div>
+                            <a href="#art" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                            </a>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Contact -->
+                <article id="contact" class="panel">
+                    <header>
+                        <h2>About</h2>
+                    </header>
+
+                    <p>
+                        I'm a musician, artist, designer, and avid gamer.  I love creating new things and digging into juicy mechanics.
+                        I’ve been playing games my whole life, and although designing is my forte, coding has come naturally to me.
+                        I specialize in C#, but I have experience with C++ and Javascript as well.
+                        <br /> <br />
+                        I've been involved with esports since 2006, and I feel that this experience has helped to shape my view of game design.
+                        As a competitive player in titles like Street Fighter, Dota, and Counter-Strike, I can understand how, through my familiarity with their systems,
+                        mechanics affect the balance of a game on a deep level.  I feel that my familiarity with the competitive scene across many different
+                        titles has helped me to become a better designer.
+                        <br /><br />
+                        I was the deputy chair of the local IGDA chapter (DC) until I moved in the spring of 2018.  During my time in DC, I helped to run
+                        local game events (SAAM Arcade, GGJ, P3M5 @ the Goethe Institute).
+                        I'm currently working for Educational Testing Services in San Francisco. I recently graduated from American University with an MA in Game Design (2018).
+                        My BA was obtained in Philosophy from SUNY Purchase in 2013.
+                        <br /> <br />Cheers!
+                    </p>
+                    <div class="row">
+                        <h4 align="center">Contact Me</h4>
+                        <p align="center">
+                            <a href="https://www.linkedin.com/in/kirby-cofino-7324a9135/" target="_blank" class="jumplink pic">
+                                <img src="images/liLogo.png" />
+                            </a>
+                            <a href="https://twitter.com/Kirby_Cofino" target="_blank" class="jumplink pic">
+                                <img src="images/twitterLogo.png" style="max-width: 60px" />
+                            </a>
                         </p>
-                </div>
-            </article>
+                        <h4 align="center">Resume</h4>
+                        <p align="center">
+                            <a href="images/Kirby Cofino Resume.pdf" target="_blank" class="jumplink pic">
+                                <img src="images/ResumeCropped.png" style="max-width: 60px" />
+                            </a>
+                        </p>
+                        <p align="right">
+                            <img src="images/email.PNG" style="max-width: 240px" />
+                        </p>
+                    </div>
+                </article>
         </div>
 
         <!-- Footer -->
