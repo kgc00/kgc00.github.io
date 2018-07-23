@@ -180,6 +180,72 @@
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
 
+        <!-- slideshow script
+    <script>
+        var slideIndex = [1,2];
+        var slideId = ["mySlides", "mySlides2", "mySlides3"]
+        showDivs(1, 0);
+        showDivs(1, 1);
+        showDivs(1, 2);
+
+        function plusDivs(n, no) {
+          showDivs(slideIndex[no] += n, no);
+        }
+
+        function currentDiv(n) {
+          showDivs(slideIndex[n] = n);
+        }
+
+        function showDivs(n, no) {
+          var i;
+          var x = document.getElementsByClassName(slideId[no]);
+          if (n > x.length) {slideIndex[no] = 1}
+          if (n < 1) {slideIndex[no] = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";
+          }
+          //for (i = 0; i < dots.length; i++) {
+          //dots[i].className = dots[i].className.replace(" w3-white", "");
+          //}
+          x[slideIndex[no]-1].style.display = "block";
+          //dots[slideIndex[no]-1].className += " w3-white";
+        }
+    </script>
+        -->
+
+        <!--<script>
+                        //var dvChange = document.getElementById('hover1');
+                        //console.log(dvChange);
+                        //if (dvChange) {
+                        //    dvChange.onmouseover = function () {
+                        //        console.log("called event");
+                        //    }
+
+                        //    dvChange.onmouseout = function () {
+                        //    }
+                       // }
+        </script>-->
+
+        <!--
+    <script>
+
+        var page = [location.hash];
+        var curr;
+        var prev;
+        function myFunction() {
+            if (location.hash == page[page.length - 2]) {
+
+                location.reload();
+            }
+            page.push(location.hash);
+            console.log(page[page.length - 1]);
+
+            if (page.length >= 5) {
+                page.splice(0, 1);
+            }
+        }
+    </script>
+        -->
     </div>
-</body>
+    </body>
 </html>
