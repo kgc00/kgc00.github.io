@@ -69,7 +69,7 @@
                     <h2>Selected Works</h2>
                 </header>
                 <p>
-                    My specialties are systems and game design. I work mainly with Unreal Engine and Unity3D. The titles below highlight my approach
+                    My specialties are systems design, UX design, and gameplay programming. I work mainly with Unreal Engine and Unity3D. The titles below highlight my approach
                     to problem solving and design.
                 </p>
                 <br />
@@ -77,25 +77,33 @@
                     <div class="inner gallery">
                         <div class="row">
                             <div class="3u 12u$(mobile)">
-                                <a href="fforce.html" class="hover" />
-                                <img src="images/work/work12.png" alt="" title="Function Force: A 2D Educational Shoot-'Em-Up" />
+                                <a href="fforce.html" class="hover" >
+                                 <img src="images/work/work12.png" alt="" title="Function Force: A 2D Educational Shoot-'Em-Up" />
                                 </a>
                             </div>
                             <div class="3u 12u(mobile)">
                                 <a href="#halef" class="hover">
                                     <img src="images/work/work11.png" alt="" title="HALEF: Simulated Multi-Modal Dialogue" />
                                 </a>
-                            </div>
-                            <div class="3u 12u$(mobile)">
-                                <a href="#4Floors" class="hover">
-                                    <img src="images/work/work04.png" alt="" title="4 Floors: A Tabletop Procedural Dungeon Crawl" />
-                                </a>
-                            </div>
+                            </div>                                                  
                             <div class="3u 12u$(mobile)">
                                 <a href="#strife" class="hover">
                                     <img src="images/work/work13.png" alt="" title="Strife!: A Game for Friends (CCG/RTS hyrbid)" />
                                 </a>
                             </div>
+                            <div class="3u 12u$(mobile)">
+                                <a href="#summer18" class="hover">
+                                    <img src="images/work/work14.png" alt="" title="Continued Research Into 3D Animation" />
+                                </a>
+                            </div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="3u 12u$(mobile)">
+                                <a href="#4Floors" class="hover">
+                                    <img src="images/work/work04.png" alt="" title="4 Floors: A Tabletop Procedural Dungeon Crawl" />
+                                </a>
+                            </div>  
                         </div>
                     </div>
                 </section>
@@ -121,6 +129,116 @@
                 -->
             </article>
 
+            <!-- SUMMER18 #summer18 -->
+            <article id="summer18" class="panel">
+                    <header>
+                        <h2>Animation Pipeline and Tools Engineering</h2>
+                    </header>
+                    <h3>Introduction</h3>
+                    <p>
+                        During the summer of 2018, I completed my second full-time internship with ETS out of their in San
+                        Francisco office. I worked primarily alone but was supported during some parts of the learning process
+                        by other team members.  This section details topics which builds off of work done during my first year's internship.
+                        You can read more about these topics on the HALEF page <a href="#halef" class="jumplink">here</a>.
+                    </p>
+                    <h3>Background</h3>
+                    <p>
+                        The team's goals had changed with the working prototype from last summer and my tasks for the summer would reflect that.
+                        The new priorities were to support non-experts who wished to author new content for our system and further explorations
+                        into increasing fidelity while lowering file size.
+                    </p>                    
+                    <h3>Authoring Content</h3>
+                    <p>
+                        Enabling non-experts to author content involved two kinds of animation pipelines, one for mouth animations and one for body animations.
+
+                        I figured we could use a kinect to do low-cost and simple DIY motion recording for the body animations.  After experimentation,
+                        I was able to record and re-target animations from the Kinect onto different kinds of avatars.  However, the complexity of the process,
+                        the fidelity of the output, and the size of the animation files proved prohibitive for the goals of the project and it was decided to
+                        continue with a traditional animation pipeline for the near future.  With this knowledge I could focus on other goals for the project.
+                    </p>
+                    <h3>Automating Mouth Animations</h3>
+                    <p>
+                        For the automated lip-syncing I set out to create a script which would not 100% accurately reflect 
+                        the source material, but do a good enough job that it seemed believable.  I chose to create a Python script
+                        which would take some kind of audio as input.
+                        <!-- image -->
+                        It would then cut that audio up into small segments and analyze the amplitude of that segment.
+                        I then inserted a hook so that we could process that data in any way we need to, in this case normalizing
+                        and adjusting the values such that there was a smooth transition from segment to segment.  
+                        <!-- In the future this would be where developers could use other techniques to adjust the output for that sample. 
+                        For example, if one were to use a spectrogram profile of the audio for that segment then it's possible to augment or diminish
+                        the strength of the segment to match the shape a mouth would need to make to produce that sound.  For example, if we detect an "a" or "o",
+                        increse the output of the sample, and an "m" or "p" profile means a decreased output. -->
+                        After all the processing had finished, the script would then translate the values of the segments into a
+                        a .txt file (and show them visually on a graph).  
+                    </p>
+                    <div class="image-wrapper">
+                            <img class="image general-image" src="images/projects/parsedLipValues.png" >
+                            <p class="image-caption">
+                                A graph showing the output of an audio file.
+                            </p>
+                    </div>
+                    <p>
+                        These values were on a normalized scale of 0-1 and would directly correlate 
+                        to how "open" the avatar's mouth should be during that frame. For an animation of 200 frames, there would be 200 values in the document.
+                        These values would then be imported into unity and read during run-time to produce realistic looking mouth animations.
+                        The best part about this is that anyone who can drag, drop, and double click files can now implement mouth
+                        animations for any avatar.  
+                    </p>
+                    <!-- <div class="image-wrapper">
+                            <img class="image general-image" src="images/projects/parsedLipValues.png" >
+                            <p class="image-caption">
+                                A graph showing the output of an audio file.
+                            </p>
+                    </div> -->
+                    <h3>3D Asset Creation</h3>
+                    <p>
+                        As part of the initiative to create more content I was tasked with creating an additional 3D avatar
+                        for use in certain scenarios.  The avatar had the same restrictions as my previous work: it had 
+                        to be of a low file size and web friendly.  It would likely be used alongside the previous model,
+                        so I used similar techniques to author content which wouldn't look out of place in a stylized context. 
+                    </p>
+                    <div class="image-wrapper">
+                        <img class="image general-image portrait" src="images/projects/alice.png" >
+                        <p class="image-caption">
+                            Alice will be used as an interactable avatar in a business setting.
+                        </p>
+                    </div>
+                    <p>
+                        Because my skills as a developer and artist had grown during the past year I experimented with different
+                        techniques to see what gave the best results.  I ended up using a small texture (about 1 MB) and hand-painted
+                        the texture onto the avatar to allow for gradients between shading values and a higher fidelity overall while still
+                        maintaining a low file-size.  
+                    </p>
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/projects/alice_office.jpg" >
+                        <p class="image-caption">
+                            Alice in an office setting.
+                        </p>
+                    </div>
+                    <p>
+                    I also experimented with using Unity driven coroutines and IK targets to minimize
+                        animation file sizes for smaller gestures like raising arms or blinking.  Finally, I experimented 
+                        with implementing scenes using Three.JS, hoping for smaller file sizes, better web compatibility,
+                        and quicker loading times, but it didn't offer much advantage over Unity.
+                    </p>
+                    <h3>Conclusion</h3>
+                    <p>
+                        Through an expertise in javascript and python I was able to create and implement tools which supported
+                        project goals.  My experiences with 3D art allowed me to create a stylized avatar for use in future projects.
+                        I was able to explore different environments and techniques including Three.JS, Unity, Motion Capture
+                        via the Kinect, and automated lip-syncing via coding to help further research goals and produce deliverables.  
+                    </p>
+                    <section>
+                            <br />
+                            <a href="#work" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left">
+                                    <span>Return</span>
+                                </span>
+                            </a>
+                        </section>
+                    </article>
+
             <!-- HALEF #halef -->
             <article id="halef" class="panel">
                 <header>
@@ -132,14 +250,13 @@
                     During the summer of 2017, I worked on an iteration of the HALEF system for ETS, as part of a full-time internship in San
                     Francisco, California. I worked primarily alone but was supported during some parts of the learning process
                     by other team members.
-                    <br />
-                    <i>
+                </p>
+                <p class="image-caption" style="margin-top: -1rem">
                         You can read more about the process in this research paper we published
                         <a href="https://dl.acm.org/citation.cfm?doid=3136755.3143034" target="_blank">here</a>.
                         <br /> You can read more about the experience in this interview with American University
                         <a href="https://www.american.edu/soc/news/kirby-cofino-ets-avatar-design.cfm" target="_blank">here</a>.
-                    </i>
-                </p>
+                    </p>
                 <h3>Background</h3>
                 <p>
                     HALEF is a multi-modal dialogue system; put simply, it is a computer system with which users can interact through spoken
@@ -151,13 +268,12 @@
                     source (no proprietary software/techniques). Due to the incredibly long load times, ETS was considering
                     moving from Unity to other engines/javascript libraries (such as three.js)
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/prevHALEFavatar.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/prevHALEFavatar.png" >
+                    <p class="image-caption">
                         Previous iteration of the HALEF avatar.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h3>Solution</h3>
 
@@ -168,14 +284,13 @@
                     leading to low poly models, 2D art, and low-resolution textures. With this in mind, I advocated for a
                     low-poly 3D aesthetic, as 3D was central to the team’s future goals.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/HALEF_TexturePalette.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/projects/HALEF_TexturePalette.png" >
+                    <p class="image-caption">
                         My texture palette for the project, a whopping 5kb on disk. A second palette was used for the office itself, which was also
                         ~5kb.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     I used Blender, an open source 3D modeling program, as well as open source libraries such as Socket.IO to keep the project
                     100% open source.
@@ -187,14 +302,13 @@
                     texture, rig, and animate the avatar.
                 </p>
 
-                <p align="center">
-                    <img class="image" src="images/projects/HALEF1.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/HALEF1.png" >
+                    <p class="image-caption">
                         The low-poly feel, although unusual for a project of this nature, fit the goals and requirements very well. Flat shading
                         helped pull off the look and increase performance.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h4>
                     To eliminate latency issues:
@@ -214,72 +328,58 @@
                     the longer we used the same models. This is because it works by setting up phoneme shapes, such as 'o',
                     or 'L', and interpolating values between those mouth shapes (rather than hand animating every mouth movement).
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/Papagayo_screen.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/Papagayo_screen.png" >
+                    <p class="image-caption">
                         Papagayo is used to insert keyframes for mouth movement via an intuitive GUI.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     Because I fundamentally changed the way in which the HALEF system interacts with the Unity web blob (due to my flow re-architecture
                     and the Unity issued updated WebGL format) I had to change how messages were passed to the different
                     parts of the system.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/HALEF_Flow1.PNG" style="max-width:320px">
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/projects/HALEF_Flow1.PNG">
                     <br />
-                    <i>
+                    <p class="image-caption">
                         The Unity web blob lives inside the client's browser page via websocket messaging it interacts with the server, which reads
                         the scenario from a unique conversation file.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     I first added hooks in the Unity web blob which could be accessed via javascript run on the HTML page, then I had the system
                     pass a message to Unity depending on its status through the javascript running on the HTML page.
                 </p>
 
-                <p align="center">
-                    <img class="image" src="images/projects/HALEF_Flow2.PNG" style="max-width:720px">
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/HALEF_Flow2.PNG" style="max-width:720px">
                     <br />
-                    <i>
+                    <p class="image-caption">
                         The system feedback loop is illustrated here. HALEF (the system) outputs phrases to Unity to represent it's decisions to
                         the user. The user responded, which was carried back to HALEF via the freeswitch platform, etc.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <p>
                     By doing so I could tell HALEF to pass a message to Unity, which would fire both the necessary animation and play the necessary
                     audio, eliminating any possibility for desynchronizing.
-                </p>
-                <h3>Tasks</h3>
-                <p>
-                    To get this project to work properly, I had to use WebSocket messaging, HTML, javascript, and C# to trigger actions and responses.
-                    Additionally, I had to use Blender to model, texture, rig, and animate the avatar; I was also responsible
-                    for creating mouth and lip animations which synced to pre-existing audio.
                 </p>
                 <h3>Result</h3>
                 <p>
                     Doing the above, I developed a working, low load-time application, complete with a decent looking 3D model. It was an incredible
                     experience to be able to immerse myself in that pipeline, which was almost entirely new to me, while
                     thinking critically about how each part affected the final product, and what I could do to eliminate
-                    the bugs in the previous iteration. There was a lot of learning on the job, but even so, I am proud that
-                    I was still able to deliver a product that both ETS and I approved.
-                    <br />
-                    <br /> Because of my contributions, I was offered a contract position to work part-time with ETS while I finished
-                    my master’s degree in Game Design at American University. The contract was twice extended, and eventually
-                    turned into a full-time position during the summer of 2018. I am currently working in ETS's San Francisco
-                    office. I am currently working on the next iteration of HALEF as I pursue my degree (shown here):
+                    the bugs in the previous iteration.
                 </p>
 
-                <p align="center">
-                    <img class="image" src="images/projects/HALEF2.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/HALEF2.png" >
+                    <p class="image-caption">
                         The current iteration of HALEF depicted, I am still continuing work on improving the system and the pipeline. We are currently
                         researching Mo-Cap inclusion for increased usability and wider adoption of the system.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <section>
                     <br />
@@ -316,13 +416,12 @@
                     <br /> In light of this, I had only a few rules- players started the game on the left side of the board, and
                     if they made it to the right side, then they won. Simple, right?
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/Iteration1.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/Iteration1.jpeg" >
+                    <p class="image-caption">
                         First iteration of 4 Floors. The board setup afforded some fantastic design opportunities, but also created problems.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     Players would take on 2 columns of enemies at a time. Ranged units from the players’ party or the monsters’ party could attack
                     from the 2nd column, but melee units could only hit the column directly in front of them. By using skills
@@ -331,13 +430,12 @@
                     <br />
                     <br /> By making it to the last row players could fight and defeat a boss monster to win the game.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/Iteration1_guide.png" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/Iteration1_guide.png" >
+                    <p class="image-caption">
                         First iteration of 4 Floors with zones defined. The red divider indicates max interaction range (without unique skill exceptions).
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <h3>Dilemma</h3>
                 <p>
                     Feedback indicated that our system for randomly generating columns (through dice rolls) was imbalanced, leading to unnecessarily
@@ -355,14 +453,13 @@
                     can affect our everyday lives for the better, which got me thinking about how spaces in games can affect
                     gameplay. In this case, it led me to introduce a room based combat system.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/RoomExamples.jpg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/RoomExamples.jpg" >
+                    <p class="image-caption">
                         Players now draw a random 'room' card from the 'room' deck. This will tell players how many monsters will be in the room,
                         as well as any additional effects or bonuses the room provides.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <p>
                     Room-based exploration was important in a few ways, the first being that a room’s size will limit the number of creatures
@@ -372,27 +469,25 @@
                     also was helpful for learnability and usability of the system-- players could see only what they could
                     interact with at that moment.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/Iteration2.jpg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/Iteration2.jpg" >
+                    <p class="image-caption">
                         Using rooms helped to teach the game to players, as well as clearly define the difficulty curve of the game.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <h4>Combat Additions</h4>
                 <p>
                     Players wanted different kinds of enemies, which required different approaches to combat for success. To address this pleasure
                     point I decided to include a more robust progression system, to give players more tools to work with,
                     as well as an increased variety in enemies, to facilitate the use of these tools.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/EnemyTypes.jpg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/EnemyTypes.jpg" >
+                    <p class="image-caption">
                         New, varied enemy types. Some deal damage per turn, some require being taken out from full HP in a single turn or they heal,
                         etc.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     New types of enemies were introduced which required different methods to overcome. This was tied into difficulty and progression
                     through use of a 'floor' system. Players would clear a certain number of rooms per floor, fight a boss,
@@ -408,26 +503,24 @@
                     Depending on which skill card was drawn players would have access to different abilities. This was done
                     to limit player options and to encourage spontaneous and explorative play.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/PlayerExample.jpg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/PlayerExample.jpg" >
+                    <p class="image-caption">
                         New, re-designed character sheets and progression system. The skill cards show which skills are gained upon increasing in
                         level.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     In addition to this, I included items which helped to customize characters and shore up weaknesses or emphasize strengths
                     differently in each playthrough. Players would draw a random item from the item deck if certain conditions
                     were met, such as defeating a boss. Players could trade items to support cooperative play.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/projects/Items.jpg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/projects/Items.jpg" >
+                    <p class="image-caption">
                         Items were gained from accomplishing feats and had many uses.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <h3>Conclusion</h3>
                 <p>
                     By adding more content and refining existing mechanics, I shaped player options and increased both the depth and amount of
@@ -459,7 +552,7 @@
 
                 <h3>Introduction</h3>
                 <p>
-                    Strife! Was my capstone project for my MA in Game Design at American University. We had 3 and a half months to create a project
+                    Strife! was my capstone project for my MA in Game Design at American University. We had 3 and a half months to create a project
                     from scratch, team size was a single person.
                     <br />
                 </p>
@@ -478,41 +571,37 @@
                     important, and which were less so.
                 </p>
 
-                <div class="rotate">
-                    <img class="image" src="images/strife/proto.jpeg" style="max-height: 200px">
-                </div>
-                <p align="center">
-                    <br />
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <a href="images/strife/proto.jpeg" target="_blank" class="rotated-image-link">
+                        <img class="image general-image rotated-image" src="images/strife/proto.jpeg" />
+                    </a>
+                    <p class="image-caption">
                         One early document, among many, to refine the design.  Feel free to open it in a new tab for a larger image.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     With a core direction defined, I could start brainstorming ways to mechanically represent them. I ended up focusing on a
                     spatial element of multiple ‘zones’. Additionally, I decided to reduce uncertainty by giving players
                     the ability to always have access to any units they’ve unlocked, throughout the game. This was meant
                     to also act as an homage to the tech trees in strategy games.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/proto1.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/strife/proto1.jpeg" >
+                    <p class="image-caption">
                         A playtest for an early version of Strife!
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     Finally, I created some units and abilities to populate the game and playtested. After each playtest I would use notes to
                     refine and adjust the balance of the game until it felt like a stable, dynamic, and exciting experience.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/proto3.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/strife/proto3.jpeg" >
+                    <p class="image-caption">
                         Getting to play with cards which had the stats and abilities printed on them was a milestone for me, and fantastic for people
                         trying to pick up the game.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h3>Rules</h3>
                 <p>
@@ -522,13 +611,12 @@
                     other player themselves. Destroying buildings is a way to damage your opponents economy. There’s also
                     a deck of powerful abilities which are obtained by producing structures.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/unionbuilding.PNG" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/strife/unionbuilding.PNG" >
+                    <p class="image-caption">
                         A sample building. Front side is on the left, the back side is on the right.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h3>Dilemmas</h3>
                 <p>
@@ -546,14 +634,13 @@
                     actions for the turn, the defending player would always have the choice of what to trade for what. This
                     made defensive play incredibly strong.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/proto2.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/strife/proto2.jpeg" >
+                    <p class="image-caption">
                         An early playtest. Playing with index cards and spreadsheets did not help games to move quickly. Many times players would
                         spend minutes consulting the spreadsheet before taking their move.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     Through playtesting, I settled upon using three zones, rather than 4, 6, or 8. Additionally, I allowed units to both use
                     an ability and move to a different zone each turn to allow for the aggressive player to choose what trades
@@ -561,14 +648,13 @@
                     creating an impenetrable wall of bodies. Finally, I linked board options to economic strength by way
                     of giving players a strong, randomized ability with every building constructed.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/SA.PNG" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/strife/SA.PNG" >
+                    <p class="image-caption">
                         A sample ability card which can be drawn from the Ansari deck. Spiritual Assault allows players to target high value, difficult
                         to engage targets and take them out of the game.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     In terms of economics, originally the game had ways to invest into economy, by building structures which boost gold gain
                     per turn. I wanted to allow players to play greedy and take risks for a greater payout later. However,
@@ -577,14 +663,13 @@
                     to build a second one for gold. This allowed players to invest in an immediate advantage, in the form
                     of units on the board, or an economic advantage, in the form of buildings.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/dm.PNG" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image portrait" src="images/strife/dm.PNG" >
+                    <p class="image-caption">
                         A sample ability card which can be drawn from the Union deck. Detonate Mine allows players to defend against aggressive plays.
                         This is especially key for the Union, who are generally weaker in the early game.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h3>Solutions for Complexity</h3>
                 <p>
@@ -592,14 +677,13 @@
                     it was hard to understand which units could do what, and with tech trees being in the game, many didn’t
                     know what units they were progressing towards.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/tech tree.PNG" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/strife/tech tree.PNG" style="max-height: 55vh" >
+                    <p class="image-caption">
                         This is part of a larger tech tree sheet for the Union faction. By presenting this information in an easy to parse way, I
                         helped keep players engaged and increased the pace of the game for newer players.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <p>
                     During the last two weeks of development, I spent my time looking at the pieces from a UX perspective. I did interviews to
                     figure out what kinds of things people wanted on cards, problems they faced, what they liked about the
@@ -607,13 +691,12 @@
                     be included on the pieces, as well as how it’s included. I tested different icons, text, and shared terminology
                     to help users onboard quickly.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/closeup.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/strife/closeup.jpeg" >
+                    <p class="image-caption">
                         An example of how the board looks with custom art and directions printed on the cards themselves.
-                    </i>
-                </p>
+                    </p>
+                </div>
 
                 <h3>Conclusion</h3>
                 <p>
@@ -629,15 +712,14 @@
                     succeeded in making a unique, deep, and fun game. Because of this, and what I’ve learned from the project,
                     I consider the game a success.
                 </p>
-                <p align="center">
-                    <img class="image" src="images/strife/proto4.jpeg" style="max-width:480px">
-                    <br />
-                    <i>
+                <div class="image-wrapper">
+                    <img class="image general-image" src="images/strife/proto4.jpeg" >
+                    <p class="image-caption">
                         The current iteration of Strife! Players are enjoying a round of speed Strife!, which pleases me greatly!
                         <br /> You can find the trailer
                         <a href="https://youtu.be/DRMdcQ7LjWA" target="_blank">here</a>.
-                    </i>
-                </p>
+                    </p>
+                </div>
                 <section>
                     <div>
                         <a href="#work" class="jumplink pic">
@@ -884,9 +966,12 @@
                 </header>
 
                 <p>
-                    I'm a musician, artist, designer, and avid gamer. I love creating new things and digging into juicy mechanics. I’ve been
-                    playing games my whole life, and although designing is my forte, coding has come naturally to me. I specialize
-                    in C#, and have experience with C++ and Javascript as well.
+                    I'm a coder, designer, and creative with a love for games and media. 
+                    I spend my time creating new experiences and exploring what's already out there. I’ve been
+                    playing games my whole life, and for the past 5~ years have pursued a career in creating them, finishing solo,
+                    school, and professional projects with a multitude of responsibilities. I specialize systems design, ux design, and
+                    programming in the C#, Python, C++, and Javascript languages.  I've contributed professionally as a 3D artist
+                    and tools engineer as well.
                     <br />
                     <br /> I've been involved with esports since 2006, and I feel that this experience has helped to shape my view
                     of game design. As a competitive player in titles like Street Fighter, Dota, and Starcraft, I can understand
@@ -896,8 +981,9 @@
                     <br />
                     <br /> I was the deputy chair of the local IGDA chapter (DC) until I moved in the spring of 2018. During my
                     time in DC, I helped to run local game events (SAAM Arcade, GGJ, P3M5 @ the Goethe Institute). I'm currently
-                    working for Educational Testing Services in San Francisco. I recently graduated from American University
-                    with an MA in Game Design (2018). My BA was obtained in Philosophy from SUNY Purchase in 2013.
+                    working as a Software Developer and Researcher for Educational Testing Services in San Francisco, a role which
+                    I was hired into after completing my MA in Game Design (2018) at American University. 
+                    My BA was obtained in Philosophy from SUNY Purchase in 2013.
                     <br />
                     <br />Cheers!
                 </p>
