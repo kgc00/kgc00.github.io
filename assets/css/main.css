@@ -176,7 +176,38 @@ iframe {
   margin: 0 auto;
   display: block;
 }
-
+.flex-container {
+  display: flex;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.no-m {
+  margin: 0;
+}
+.inline-code {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: monospace;
+  margin: auto;
+  background-color: lightgray;
+  color: black;
+  padding: 5px;
+}
+.code {
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: monospace;
+  margin: auto;
+  background-color: lightgray;
+  color: black;
+  padding: 20px;
+  margin-bottom: 48px;
+  overflow: auto;
+}
+.al-cent {
+  align-self: center;
+}
 .image-wrapper {
   display: flex;
   flex-direction: column;
