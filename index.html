@@ -43,6 +43,9 @@
             <a href="#contact" class="icon fa-user">
                 <span>About</span>
             </a>
+            <a href="images/Kirby Cofino Resume.pdf" target="_blank" class="jumplink pic icon fa-file">
+                <span>Resume</span>
+            </a>
             <!--<a href="https://twitter.com/kgc_dev" class="icon fa-twitter"><span>Twitter</span></a>-->
         </nav>
 
@@ -944,9 +947,18 @@
                         This project was an exercise in quickly prototyping out an idea in code while also using design
                         patterns and C# best practices to write strong extensible logic. I introduced appropriate
                         patterns wherever possible while trying to also keep the codebase as light as possible. It took
-                        me about 3 months of 10 hours a week.<a class="jumplink"
+                        me about 3-4 months of 10 hours a week.<a class="jumplink"
                             href="https://github.com/kgc00/pathfinding_demo" target="_blank"> Please feel free to check
                             out the codebase here</a>.
+                    </p>
+                    <h4>Performance</h4>
+                    <p>Because of the small scope of this project, I chose to freely use Linq for the majority of
+                        queries. Although Linq is slower than the alternative: imperative programming using for/if
+                        statements, I felt that that the benefit gained from Linq's declarative, clear language
+                        outweighed any performance drawbacks. I also did some testing with object pooling, where it made
+                        sense, but after checking the 'high-stress' scenarios with the profiler I noticed there was no
+                        performance benefit, the game was just too lightweight, so I removed the systems as I felt they
+                        gave no benefit but added complexity to the codebase.
                     </p>
                     <h3>Achievements/Overview</h3>
                     <p>There's a lot to say about this prototype, however, for brevity's sake I'll just detail the
@@ -970,6 +982,7 @@
                         <smallp>-An event queue system which funnels low-level events to
                             high-level classes that care about those events
                         </smallp>
+                        <smallp>-Multiple playable characters</smallp>
                     </div>
                     <h3>Pathfinding System</h3>
 
@@ -1079,6 +1092,57 @@ bool ExpandSearch (ShadowTile from, Tile to) {
                         because I’d have to dispatch x requests where x is the number of tiles which are theoretically
                         in range and therefore can act as a destination. With this implementation I only need dispatch
                         one request.</p>
+
+                    <pre class="code">
+// Board.cs
+// Dirs definition used by BoardPathfinding.cs
+public Point[] Dirs => new Point[4] {
+    new Point (0, 1),
+    new Point (0, -1),
+    new Point (1, 0),
+    new Point (-1, 0)
+};
+</pre>
+                    <pre class="code">
+// BoardPathfinding.cs
+public List<PathfindingData> Search (Tile start, Func<ShadowTile, Tile, bool> addTile) {
+    Queue<ShadowTile> checkNext = new Queue<ShadowTile> ();
+    Queue<ShadowTile> checkNow = new Queue<ShadowTile> ();
+    ...
+
+    // while there are still 'reachable' tiles which haven't been checked
+    while (checkNow.Count > 0) {
+        ShadowTile currentShadow = checkNow.Dequeue ();
+
+        // add the next 'ring' of tiles to search, expanding out from
+        // whatever tile we are currently checking
+        for (int i = 0; i < 4; ++i) {
+            Tile nextTile = GetTile (currentShadow.position + board.Dirs[i]);
+            if (nextTile == null) {
+                continue;
+            }
+
+            // skip the addTile logic if this tile has been checked already
+            ShadowTile oldShadow = shadows.Find (shadow => shadow.tile == nextTile);
+            if (oldShadow != null) continue;
+
+            // use strategy pattern to define which adjacent tiles are valid targets
+            if (addTile (currentShadow, nextTile)) {
+                var checkedShadow = new ShadowTile (currentShadow.distance + 1, nextTile.Position, currentShadow, nextTile);
+                checkNext.Enqueue (checkedShadow);
+                shadows.Add (checkedShadow);
+            }
+        }
+
+        ...
+    }
+}</pre>
+
+                    <p>Basically, we do a 'flood-fill' type algorithm checking each valid tile only once, creating a
+                        linked-list of the path that was taken to reach that tile from the starting position. In this
+                        way we will always get the optimal path, and we can calculate all tiles' distance without
+                        relying on a pre-defined target supplied to the algorithm.
+                    </p>
 
 
                     <p>Below is the flow for a standard request where a unit wants to see all of the valid moves
