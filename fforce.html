@@ -14,7 +14,8 @@
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <!--<body onload="myFunction()">-->
@@ -23,194 +24,208 @@
 
 <body>
     <!-- Wrapper-->
-    <div id="wrapper">
-
+    <div id="wrapper" style="padding-top: 202.5px; opacity: 1;" >
         <!-- Nav -->
         <nav id="nav">
-            <a href="index.html#me" class="icon fa-home"><span>Home</span></a>
-            <a href="index.html#work" class="icon fa-gamepad"><span>Work</span></a>
-            <a href="index.html#art" class="icon fa-paint-brush"><span>Art</span></a>
-            <a href="index.html#contact" class="icon fa-user"><span>Contact</span></a>
+            <a href="index.html#me" class="icon fa-home active">
+                <span>Home</span>
+            </a>
+            <a href="index.html#selected_works" class="icon fa-folder-open">
+                <span>Work</span>
+            </a>
+            <a href="index.html#games" class="icon fa-gamepad">
+                <span>Games</span>
+            </a>
+            <!-- <a href="index.html#art" class="icon fa-paint-brush">
+                <span>Art</span>
+            </a> -->
+            <a href="index.html#contact" class="icon fa-user">
+                <span>About</span>
+            </a>
+            <a href="images/Kirby Cofino Resume.pdf" target="_blank" class="jumplink pic icon fa-file">
+                <span>Resume</span>
+            </a>
             <!--<a href="https://twitter.com/kgc_dev" class="icon fa-twitter"><span>Twitter</span></a>-->
         </nav>
 
         <!-- Main -->
         <div id="main">
 
-            <!-- FF -->
-            <article id="functionForce" class="panel">
-                <header>
-                    <h2>Function Force</h2>
-                </header>
+                <!-- FF -->
+                <article id="functionForce" class="panel">
+                    <header>
+                        <h2>Function Force</h2>
+                    </header>
 
-                <h3>Background</h3>
-                <p>
-                    Function Force is an educational game to teach middle-schoolers linear algebra (y=mx + b).
-                </p>
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/projects/FF_Title.png">
-
-                    <p class="image-caption">
-                        Title Screen.
+                    <h3>Background</h3>
+                    <p>
+                        Function Force is an educational game to teach middle-schoolers linear algebra (y=mx + b).
                     </p>
-                </div>
-                <p>
-                    Function Force was originally conceived during a game jam at the White House by my professors at
-                    American University.
-                    <br /><br />
-                    Our task (myself and two other students) was to redesign the core concept and make it our own, over
-                    the course of a semester, for ETS to use as
-                    part of an initiative of game based tests (developed in early 2017). I did all the level and puzzle
-                    design, as well as some of the art.
-                    I was also key in the systems design, however, it was a very collaborative process where we all
-                    built off of each other’s ideas, and I enjoyed it very much.
-                </p>
-                <h3> Concept</h3>
-                <p>
-                    Although the original function force was technically a shoot ‘em up game, in practice it played more
-                    like a puzzle game. We decided to emphasize
-                    the real-time nature of a shoot ‘em up game.
-                </p>
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/projects/FF_Old.png">
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/projects/FF_Title.png">
 
-                    <p class="image-caption">
-                        The slider based system for operating the gun using the mouse is at odds with controlling the
-                        ship itself.
-                        Responding to moving threats would be very difficult for players.
-                    </p>
-                </div>
-                <h3>Dilemma</h3>
-                <p>
-                    Function Force was sponsored primarily as a game-based testing application, which is at odds with
-                    the dextrous nature of a shoot ‘em up game.
-                    Ideally, test administrators would be able to measure mastery over mathematical concepts distinctly
-                    from the skill involved in playing a game.
-                    How can we, as the designers, deliver a sterile testing environment while also making a fun shoot
-                    ‘em up?
-                </p>
-                <h3>Solution</h3>
-                <p>
-                    Our solution was to split up levels into shooting sections and puzzle sections, with shooting
-                    sections containing soft teaching/testing moments and
-                    puzzle sections requiring only mastery over the mathematical content to progress.
-                </p>
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/gifs/FF/ezlaser.gif">
-                    <p class="image-caption">
-                        Although players could avoid enemies, levels and content were designed to foster the use of a
-                        laser which follows the y=mx+b formula.
-                        Scoring helps to record whether the player was able to destroy enemies or only avoid them.
-                    </p>
-                </div>
-                <p>
-                    ETS let us know that they wanted more testable moments, moments where they could tell whether or not
-                    the student had mastered the concept.
-                    This translated for me to designing content which was impossible without the correct formula plugged
-                    into your laser.
-                    With that in mind I came up with and designed the tunnel sub-sections found in some portions of the
-                    shooting sections.
-                </p>
-                <br />
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/gifs/FF/eztunnel.gif">
-                    <p class="image-caption">
-                        Only the tunnel sections required mastery over the mathematical concept.
-                    </p>
-                </div>
-                <h3>Dilemma 2</h3>
-                <p>
-                    Can we include a progression system to introduce the content to players in a staggered manner? We’d
-                    like to foster engagement and support a
-                    staggered difficulty/learning curve.
-                </p>
-                <h3>Solution</h3>
-                <p>
-                    Our solution was to introduce powerups (called satellites) which act as extra guns that fly next to
-                    your original ship, similar to upgrading your
-                    laser in other shoot ‘em ups. Originally we were thinking of sine wave lasers, reflective surfaces,
-                    and other ways to implement satellites (such
-                    as dropping them at locations as consumable), but decided on this implementation due to its synergy
-                    with shoot ‘em up mechanics and its usefulness
-                    and simplicity in both puzzle and shooting sections.
-                </p>
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/gifs/FF/ezsat.gif">
-                    <p class="image-caption">Power-ups (Satellites) which follow the player and can be adjusted via the
-                        testing content (y=mx+b).
-
-                    </p>
-                </div>
-                <p>
-                    The puzzle sections that we introduced had a scaling difficulty to them. As players collected more
-                    satellites the puzzles became harder
-                    because players would have to hit more "locks" with their lasers to progress. What was initially a
-                    simple puzzle mechanic became
-                    an interesting and powerful testing mechanism.
-                </p>
-
-                <div class="image-wrapper">
-                    <img class="image general-image" src="images/gifs/FF/ezpuzzle.gif">
-                    <p class="image-caption">
-                        A puzzle section in the later stages of the game.
-                        It requires players to hit 3 locking mechanisms at the same time to progress.
-                    </p>
-                </div>
-
-                <p>
-                    Having a progression system with these elements enabled:
-                </p>
-                <div class="list-wrapper">
-                    <smallP> -More space for player improvement and play</smallP>
-                    <smallP> -The ability to teach and test a deeper understanding of y=mx+b</smallP>
-                    <smallP> -More complex puzzles to test the player’s understanding of core mathematical concepts
-                    </smallP>
-                    <smallP>
-                        -Larger amounts of enemies as the player progresses, increasing feelings of excitement and
-                        engagement
-                    </smallP>
-                </div>
-
-                <h3>Conclusion</h3>
-                <p>
-                    By splitting up the game into shooting and puzzle sections, we were able to pace the experience such
-                    that it is constantly engaging.
-                    This also allowed for a variety of testable/teachable moments through the level and enemy design.
-                    <br />
-                    Additionally, adding satellites introduced the ability to have more complex puzzles and difficult
-                    enemies, both of which increase player enjoyment.
-                    <br />
-                    We were effectively able to take a concept and effectively change it’s implementation to better suit
-                    both the client’s needs and the medium.
-                </p>
-                <section>
-                    <div>
-                        <a href="index.html#selected_works" class="jumplink pic">
-                            <span class="arrow icon fa-chevron-left"><span>Return</span></span>
-                        </a>
+                        <p class="image-caption">
+                            Title Screen.
+                        </p>
                     </div>
-                </section>
-            </article>
+                    <p>
+                        Function Force was originally conceived during a game jam at the White House by my professors at
+                        American University.
+                        <br /><br />
+                        Our task (myself and two other students) was to redesign the core concept and make it our own, over
+                        the course of a semester, for ETS to use as
+                        part of an initiative of game based tests (developed in early 2017). I did all the level and puzzle
+                        design, as well as some of the art.
+                        I was also key in the systems design, however, it was a very collaborative process where we all
+                        built off of each other’s ideas, and I enjoyed it very much.
+                    </p>
+                    <h3> Concept</h3>
+                    <p>
+                        Although the original function force was technically a shoot ‘em up game, in practice it played more
+                        like a puzzle game. We decided to emphasize
+                        the real-time nature of a shoot ‘em up game.
+                    </p>
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/projects/FF_Old.png">
 
-            <!-- Footer -->
-            <div id="footer">
-                <ul class="copyright">
-                    <li>&copy; Kirby Cofino</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                    <li>Resume Icon: Gregor Cresnar</li>
-                </ul>
-            </div>
+                        <p class="image-caption">
+                            The slider based system for operating the gun using the mouse is at odds with controlling the
+                            ship itself.
+                            Responding to moving threats would be very difficult for players.
+                        </p>
+                    </div>
+                    <h3>Dilemma</h3>
+                    <p>
+                        Function Force was sponsored primarily as a game-based testing application, which is at odds with
+                        the dextrous nature of a shoot ‘em up game.
+                        Ideally, test administrators would be able to measure mastery over mathematical concepts distinctly
+                        from the skill involved in playing a game.
+                        How can we, as the designers, deliver a sterile testing environment while also making a fun shoot
+                        ‘em up?
+                    </p>
+                    <h3>Solution</h3>
+                    <p>
+                        Our solution was to split up levels into shooting sections and puzzle sections, with shooting
+                        sections containing soft teaching/testing moments and
+                        puzzle sections requiring only mastery over the mathematical content to progress.
+                    </p>
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/gifs/FF/ezlaser.gif">
+                        <p class="image-caption">
+                            Although players could avoid enemies, levels and content were designed to foster the use of a
+                            laser which follows the y=mx+b formula.
+                            Scoring helps to record whether the player was able to destroy enemies or only avoid them.
+                        </p>
+                    </div>
+                    <p>
+                        ETS let us know that they wanted more testable moments, moments where they could tell whether or not
+                        the student had mastered the concept.
+                        This translated for me to designing content which was impossible without the correct formula plugged
+                        into your laser.
+                        With that in mind I came up with and designed the tunnel sub-sections found in some portions of the
+                        shooting sections.
+                    </p>
+                    <br />
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/gifs/FF/eztunnel.gif">
+                        <p class="image-caption">
+                            Only the tunnel sections required mastery over the mathematical concept.
+                        </p>
+                    </div>
+                    <h3>Dilemma 2</h3>
+                    <p>
+                        Can we include a progression system to introduce the content to players in a staggered manner? We’d
+                        like to foster engagement and support a
+                        staggered difficulty/learning curve.
+                    </p>
+                    <h3>Solution</h3>
+                    <p>
+                        Our solution was to introduce powerups (called satellites) which act as extra guns that fly next to
+                        your original ship, similar to upgrading your
+                        laser in other shoot ‘em ups. Originally we were thinking of sine wave lasers, reflective surfaces,
+                        and other ways to implement satellites (such
+                        as dropping them at locations as consumable), but decided on this implementation due to its synergy
+                        with shoot ‘em up mechanics and its usefulness
+                        and simplicity in both puzzle and shooting sections.
+                    </p>
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/gifs/FF/ezsat.gif">
+                        <p class="image-caption">Power-ups (Satellites) which follow the player and can be adjusted via the
+                            testing content (y=mx+b).
+
+                        </p>
+                    </div>
+                    <p>
+                        The puzzle sections that we introduced had a scaling difficulty to them. As players collected more
+                        satellites the puzzles became harder
+                        because players would have to hit more "locks" with their lasers to progress. What was initially a
+                        simple puzzle mechanic became
+                        an interesting and powerful testing mechanism.
+                    </p>
+
+                    <div class="image-wrapper">
+                        <img class="image general-image" src="images/gifs/FF/ezpuzzle.gif">
+                        <p class="image-caption">
+                            A puzzle section in the later stages of the game.
+                            It requires players to hit 3 locking mechanisms at the same time to progress.
+                        </p>
+                    </div>
+
+                    <p>
+                        Having a progression system with these elements enabled:
+                    </p>
+                    <div class="list-wrapper">
+                        <smallP> -More space for player improvement and play</smallP>
+                        <smallP> -The ability to teach and test a deeper understanding of y=mx+b</smallP>
+                        <smallP> -More complex puzzles to test the player’s understanding of core mathematical concepts
+                        </smallP>
+                        <smallP>
+                            -Larger amounts of enemies as the player progresses, increasing feelings of excitement and
+                            engagement
+                        </smallP>
+                    </div>
+
+                    <h3>Conclusion</h3>
+                    <p>
+                        By splitting up the game into shooting and puzzle sections, we were able to pace the experience such
+                        that it is constantly engaging.
+                        This also allowed for a variety of testable/teachable moments through the level and enemy design.
+                        <br />
+                        Additionally, adding satellites introduced the ability to have more complex puzzles and difficult
+                        enemies, both of which increase player enjoyment.
+                        <br />
+                        We were effectively able to take a concept and effectively change it’s implementation to better suit
+                        both the client’s needs and the medium.
+                    </p>
+                    <section>
+                        <div>
+                            <a href="index.html#selected_works" class="jumplink pic">
+                                <span class="arrow icon fa-chevron-left"><span>Return</span></span>
+                            </a>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Footer -->
+                <div id="footer">
+                    <ul class="copyright">
+                        <li>&copy; Kirby Cofino</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li>Resume Icon: Gregor Cresnar</li>
+                    </ul>
+                </div>
 
 
-            <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/skel-viewport.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-            <script src="assets/js/main.js"></script>
+                <!-- Scripts -->
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/skel.min.js"></script>
+                <script src="assets/js/skel-viewport.min.js"></script>
+                <script src="assets/js/util.js"></script>
+                <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+                <script src="assets/js/main.js"></script>
 
-        </div>
+        
+    </div>
 </body>
 
 </html>
