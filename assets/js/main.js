@@ -228,23 +228,19 @@
         });
 
         $window.on("hashchange", function (e) {
-          console.log("window.location.hash " + window.location.hash);
-          console.log(
-            "pageHashes[pageHashes.length - 2] " +
-              pageHashes[pageHashes.length - 2]
-          );
-          console.log(pageHashes);
+          //   console.log("window.location.hash " + window.location.hash);
+          //   console.log(
+          //     "pageHashes[pageHashes.length - 2] " +
+          //       pageHashes[pageHashes.length - 2]
+          //   );
+          //   console.log(pageHashes);
           if (window.location.hash === pageHashes[pageHashes.length - 2]) {
-            console.log("popping");
-            const [hash] = pageHashes.slice(-2, -1);
-            console.log("hash -- " + hash);
-            if (!hash) return;
-
+            // console.log("popping");
+            let [hash] = pageHashes.slice(-2, -1);
+            // console.log("hash -- " + hash);
+            if (!hash) hash = "#me";
             const id = hash.substring(1);
-            if (id == "#") {
-              e.preventDefault();
-              e.stopPropagation();
-            }
+            // console.log(panels);
             if (id in panels) panels[id]._activate();
           }
           pageHashes.push(window.location.hash);
