@@ -1404,6 +1404,12 @@ ol.default li {
 @media screen and (min-width: 737px) {
   /* Basic */
 
+  .dsImageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   html {
     min-width: 100%;
     min-height: 100%;
@@ -1716,6 +1722,12 @@ ol.default li {
 
 @media screen and (max-width: 736px) {
   /* Basic */
+
+  .dsImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   body,
   input,

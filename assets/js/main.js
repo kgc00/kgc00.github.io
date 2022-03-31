@@ -204,17 +204,21 @@
 
         // Nav + Jumplinks.
         $nav_links.add($hovers).click(function (e) {
-          var t = $(this),
-            href = t.attr("href"),
-            id;
+          try {
+            var t = $(this),
+              href = t.attr("href"),
+              id;
 
-          if (href.substring(0, 1) == "#") {
-            e.preventDefault();
-            e.stopPropagation();
+            if (href.substring(0, 1) == "#") {
+              e.preventDefault();
+              e.stopPropagation();
 
-            id = href.substring(1);
+              id = href.substring(1);
 
-            if (id in panels) panels[id]._activate();
+              if (id in panels) panels[id]._activate();
+            }
+          } catch (error) {
+            // suppress
           }
         });
 
